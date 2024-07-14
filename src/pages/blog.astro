@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Hero from "../components/Blog/Hero.astro";
+import BentoGrid from "../components/BentoGrid.astro";
+---
+
+<Layout title='Unternehmen'>
+  <main
+    class='w-full h-full flex flex-col gap-y-20 lg:gap-y-40 text-center sm:text-start'
+  >
+    <Hero />
+
+    <section class='flex flex-col gap-y-40'>
+      <BentoGrid
+        title='Berlin'
+        desc='Curiously, a key factor of the internal resources immensely changes the principles of The Advancement of Competent Progress'
+        day='April 2024'
+        imagePath='/src/assets/unternehmen.jpg'
+      />
+
+      <BentoGrid
+        title='Berlin'
+        desc='Curiously, a key factor of the internal resources immensely changes the principles of The Advancement of Competent Progress'
+        day='Mai 2024'
+        imagePath='/src/assets/berlin1.jpg'
+      />
+
+      <BentoGrid
+        title='Berlin'
+        desc='Curiously, a key factor of the internal resources immensely changes the principles of The Advancement of Competent Progress of The Advancement of Competent Progress'
+        day='Juli 2024'
+        imagePath='/src/assets/img1.jpg'
+      />
+    </section>
+  </main>
+</Layout>

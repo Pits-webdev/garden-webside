@@ -1,0 +1,60 @@
+---
+import { Icon } from "astro-icon/components";
+import SocialLink from "./SocialLink.astro";
+
+let date = new Date().getFullYear();
+---
+
+<footer
+  class='w-full h-full px-4 pb-4 mt-16 lg:mt-32 text-center sm:text-start'
+>
+  <div class='bg-background_light rounded-2xl py-8'>
+    <div class='container'>
+      <div class='text-black mb-8 flex items-center justify-center gap-x-2'>
+        <a class='flex items-center gap-1 text-xl font-bold' href='/'>
+          <span><Icon name='instagram' size={36} /></span>Logo
+        </a>
+      </div>
+      <span class='inline-block bg-gray w-full h-[1px] mb-12'></span>
+    </div>
+
+    <div class='container grid sm:grid-cols-3 lg:grid-cols-4 gap-8'>
+      <!-- item -->
+      <div class='item text-black'>
+        <h4 class='mb-2'>Unternehmen</h4>
+        <p>Name</p>
+        <p>Street</p>
+        <p>Country</p>
+      </div>
+      <!-- item -->
+      <div class='item text-black'>
+        <h4 class='mb-2'>Kontakt</h4>
+        <p>Name</p>
+        <p>Street</p>
+        <p>Country</p>
+      </div>
+      <!-- item -->
+      <div class='item text-black'>
+        <h4 class='mb-2'>Rechtliches</h4>
+        <p>Impressum</p>
+        <p>Datenschutz</p>
+      </div>
+
+      <!-- item social-->
+      <div
+        class='item text-black flex flex-col sm:flex-row lg:flex-col gap-x-8 gap-y-2 sm:col-start-1 sm:col-end-4 lg:col-start-4 lg:col-end-5'
+      >
+        <SocialLink link='/' name='Facebook' icon='facebook' />
+        <SocialLink link='/' name='Instagram' icon='instagram' />
+        <SocialLink link='/' name='X' icon='x' />
+      </div>
+    </div>
+
+    <div class='container'>
+      <span class='inline-block bg-gray w-full h-[1px] mt-12'></span>
+      <div class='text-black mt-8 flex items-center justify-center gap-x-2'>
+        <p>Powerd by Peter | All rights reserved &copy; {date}</p>
+      </div>
+    </div>
+  </div>
+</footer>

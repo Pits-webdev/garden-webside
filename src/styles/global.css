@@ -1,0 +1,45 @@
+:root {
+  --background: hsl(166, 91%, 9%);
+  --backgroundLight: hsl(33, 100%, 96%);
+  --accent: hsl(82, 85%, 67%);
+  --gray: hsl(137, 4%, 38%);
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Regular.ttf");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+body {
+  @apply bg-background text-white font-Inter;
+}
+
+h1 {
+  @apply text-3xl lg:text-7xl;
+}
+
+h2 {
+  @apply text-3xl lg:text-6xl;
+}
+
+h3 {
+  @apply text-xl lg:text-3xl;
+}
+
+h4 {
+  @apply font-bold;
+}
+
+/* Swiper style */
+.swiper-wrapper {
+  @apply !h-[calc(400px+6vw)];
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  @apply bg-accent;
+}

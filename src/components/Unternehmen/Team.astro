@@ -1,0 +1,88 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import User from "../../assets/defaultUser.jpg";
+---
+
+<section class='w-full h-full px-4'>
+  <div class='bg-background_light rounded-2xl py-8 sm:py-16 lg:py-32'>
+    <div class='container'>
+      <h4 class='text-black mb-8 flex items-center gap-x-2'>
+        <span class='inline-block bg-accent size-4 rounded-full'></span>Team
+      </h4>
+      <span class='inline-block bg-gray w-full h-[1px] mb-12'></span>
+      <h2 class='text-black'>Key to clean future</h2>
+    </div>
+
+    <div
+      class='container grid md:grid-cols-2 lg:grid-cols-4 gap-4 gap-x-8 mt-14 lg:mt-28'
+    >
+      <!-- item -->
+      <div
+        class='grid justify-items-center
+         grid-rows-subgrid row-span-4'
+      >
+        <div class='flex items-center justify-center size-16'>
+          <Image class='rounded-full' src={User} alt='team' />
+        </div>
+        <h4 class='text-black'>Eva Smith</h4>
+        <p class='text-gray'>Backend Developer</p>
+      </div>
+      <!-- item -->
+      <div
+        class='grid justify-items-center
+        grid-rows-subgrid row-span-4'
+      >
+        <div class='flex items-center justify-center size-16'>
+          <Image class='rounded-full' src={User} alt='team' />
+        </div>
+        <h4 class='text-black'>Eva Smith</h4>
+        <p class='text-gray'>Backend Developer</p>
+      </div>
+      <!-- item -->
+      <div
+        class='grid justify-items-center
+         grid-rows-subgrid row-span-4'
+      >
+        <div class='flex items-center justify-center size-16'>
+          <Image class='rounded-full' src={User} alt='team' />
+        </div>
+        <h4 class='text-black'>Eva Smith</h4>
+        <p class='text-gray'>Backend Developer</p>
+      </div>
+      <!-- item -->
+      <div
+        class='grid justify-items-center
+        grid-rows-subgrid row-span-4'
+      >
+        <div class='flex items-center justify-center size-16'>
+          <Image class='rounded-full' src={User} alt='team' />
+        </div>
+        <h4 class='text-black'>Eva Smith</h4>
+        <p class='text-gray'>Backend Developer</p>
+      </div>
+      <!-- item -->
+      <div
+        class='grid lg:col-start-2 justify-items-center
+        grid-rows-subgrid row-span-4'
+      >
+        <div class='flex items-center justify-center size-16'>
+          <Image class='rounded-full' src={User} alt='team' />
+        </div>
+        <h4 class='text-black'>Eva Smith</h4>
+        <p class='text-gray'>Backend Developer</p>
+      </div>
+      <!-- item -->
+      <div
+        class='grid justify-items-center
+        grid-rows-subgrid row-span-4'
+      >
+        <div class='flex items-center justify-center size-16'>
+          <Image class='rounded-full' src={User} alt='team' />
+        </div>
+        <h4 class='text-black'>Eva Smith</h4>
+        <p class='text-gray'>Backend Developer</p>
+      </div>
+    </div>
+  </div>
+</section>

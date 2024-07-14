@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import user from "../../assets/defaultUser.jpg";
+---
+
+<section class='w-full h-full px-4'>
+  <div class='container'>
+    <h4 class='mb-8 flex items-center gap-x-2'>
+      <span class='inline-block bg-accent size-4 rounded-full'></span>Our Expert
+    </h4>
+    <span class='inline-block bg-gray w-full h-[1px] mb-12'></span>
+    <h2>Meet our experts</h2>
+  </div>
+
+  <div class='container mt-28'>
+    <div class='flex items-center'>
+      <Image class='size-12 rounded-full' src={user} alt='user' />
+      <p class='ml-4'>John Doe</p>
+      <p class='text-slate-400 ml-20'>Solar energy services</p>
+    </div>
+
+    <div class='flex flex-col sm:flex-row gap-8 items-center mt-32'>
+      <div class='flex-1'>
+        <h3 class='lg:text-4xl leading-tight max-w-[520px]'>
+          Your Source for Green Energy Updates
+        </h3>
+      </div>
+
+      <form class='flex-1 flex flex-col lg:flex-row items-center gap-2'>
+        <input
+          class='py-3 px-4 rounded-full bg-background_light text-black sm:w-3/4'
+          type='text'
+          placeholder='Your Email'
+        />
+        <button
+          class='py-3 rounded-full bg-accent text-black w-full sm:w-3/4 lg:w-1/3'
+          type='submit'>Get in touch</button
+        >
+      </form>
+    </div>
+    <span class='inline-block bg-gray w-full h-[1px] mt-12'></span>
+  </div>
+</section>

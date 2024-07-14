@@ -1,0 +1,118 @@
+---
+import { Icon } from "astro-icon/components";
+import MobileMenu from "./MobileMenu.astro";
+
+interface Links {
+  link: string;
+  path: string;
+}
+
+const links: Links[] = [
+  {
+    link: "Startseite",
+    path: "/",
+  },
+  {
+    link: "Leistungen",
+    path: "/leistungen",
+  },
+  {
+    link: "Unternehmen",
+    path: "/unternehmen",
+  },
+  {
+    link: "Blog",
+    path: "/blog",
+  },
+  {
+    link: "Jobs",
+    path: "/jobs",
+  },
+];
+---
+
+<header
+  id='header'
+  class='fixed w-full h-[100px] bg-background border-b-2 border-b-accent overflow-hidden transition-all z-40'
+>
+  <div class='container h-full flex items-center justify-between'>
+    <a href='/'>Logo</a>
+
+    <nav class='hidden md:flex gap-x-8'>
+      {links.map((link) => <a href={link.path}>{link.link}</a>)}
+    </nav>
+
+    <a
+      class='hidden md:flex py-2 px-8 border border-white rounded-full'
+      href='/kontakt'>Kontakt</a
+    >
+
+    <!-- mobile icons -->
+    <button id='mobile-btn' class='flex md:hidden items-center' type='button'>
+      <span id='menu-icon' class='flex'
+        ><Icon id='icon' name='menu' size={36} /></span
+      >
+      <span id='close-icon' class='hidden'
+        ><Icon id='icon' name='close' size={36} /></span
+      >
+    </button>
+  </div>
+</header>
+
+<div id='mobile-nav' class='hidden fixed w-full h-screen bg-background z-20'>
+  <MobileMenu />
+</div>
+
+<script>
+  const header = document.querySelector("#header");
+  const mobileBtn = document.querySelector("#mobile-btn");
+  const menuIcon = document.querySelector("#menu-icon");
+  const closeIcon = document.querySelector("#close-icon");
+  const mobileNav = document.querySelector("#mobile-nav");
+
+  /* Hamburger Menu */
+  let isOpen = false;
+
+  mobileBtn?.addEventListener("click", (e) => {
+    isOpen = !isOpen;
+
+    if (!isOpen) {
+      menuIcon?.classList.add("flex");
+      menuIcon?.classList.remove("hidden");
+
+      closeIcon?.classList.add("hidden");
+      closeIcon?.classList.remove("flex");
+
+      mobileNav?.classList.add("hidden");
+      mobileNav?.classList.remove("flex");
+    }
+
+    if (isOpen) {
+      menuIcon?.classList.add("hidden");
+      menuIcon?.classList.remove("flex");
+
+      closeIcon?.classList.add("flex");
+      closeIcon?.classList.remove("hidden");
+
+      mobileNav?.classList.add("flex");
+      mobileNav?.classList.remove("hidden");
+    }
+  });
+
+  /* Menu scroll effect */
+  let scrollPos = window.scrollY;
+
+  window.onscroll = () => {
+    let currentScrollPos = window.scrollY;
+
+    if (scrollPos > currentScrollPos) {
+      header?.classList.remove("h-[0px]");
+      header?.classList.add("h-[100px]");
+      scrollPos = currentScrollPos;
+    } else if (currentScrollPos > scrollPos + 50) {
+      header?.classList.remove("h-[100px]");
+      header?.classList.add("h-[0px]");
+      scrollPos = currentScrollPos;
+    }
+  };
+</script>

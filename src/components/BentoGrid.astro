@@ -1,0 +1,68 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  imagePath: string;
+  title: string;
+  desc: string;
+  day: any;
+}
+
+const { title, desc, day, imagePath } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif}"
+);
+
+if (!images[imagePath])
+  throw new Error(
+    `"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+  );
+console.log(imagePath);
+---
+
+<div
+  class='container text-black bg-background_light p-8 rounded-2xl grid grid-cols-4 grid-rows-[160px_120px_80px_80px] gap-4'
+>
+  <div class='h-full col-start-1 col-end-3 row-start-1 row-end-2'>
+    <h4 class='mb-1'>{title}</h4>
+    <div class='h-full flex flex-col justify-between'>
+      <p>{desc}</p>
+      <span class='inline-block bg-accent px-4 py-1 rounded-xl mb-8 w-fit'
+        >{day}</span
+      >
+    </div>
+  </div>
+
+  <div class='col-start-1 col-end-3 row-start-2 row-end-5 overflow-hidden'>
+    <Image
+      class='object-cover h-full rounded-2xl'
+      src={images[imagePath]()}
+      alt={title}
+    />
+  </div>
+
+  <div class='col-start-3 col-end-5 row-start-1 row-end-3'>
+    <Image
+      class='object-cover h-full rounded-2xl'
+      src={images[imagePath]()}
+      alt=' Berlin'
+    />
+  </div>
+
+  <div class='col-start-3 col-end-4 row-start-3 row-end-5'>
+    <Image
+      class='object-cover h-full rounded-2xl'
+      src={images[imagePath]()}
+      alt=' Berlin'
+    />
+  </div>
+
+  <div class='col-start-4 col-end-5 row-start-3 row-end-5'>
+    <Image
+      class='object-cover h-full rounded-2xl'
+      src={images[imagePath]()}
+      alt=' Berlin'
+    />
+  </div>
+</div>

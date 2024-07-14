@@ -1,0 +1,14 @@
+---
+interface Props {
+  subTitle: string;
+}
+
+const { subTitle } = Astro.props;
+---
+
+<div class='w-full h-full'>
+  <h4 class='mb-8 flex items-center gap-x-2'>
+    <span class='inline-block bg-accent size-4 rounded-full'></span>{subTitle}
+  </h4>
+  <span class='inline-block bg-gray w-full h-[1px] mb-16 lg:mb-32'></span>
+</div>

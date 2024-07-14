@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import SubtitleLine from "../SubtitleLine.astro";
+
+import unternehmen from "../../assets/unternehmen.jpg";
+---
+
+<section class='w-full h-full'>
+  <div class='container flex flex-col pt-48'>
+    <h1 class='text-center mb-16 lg:mb-32'>Unternehmen</h1>
+
+    <SubtitleLine subTitle='Unser Geschichte' />
+
+    <p class='text-center text-xl md:text-left leading-8 lg:w-9/12'>
+      Let's consider, that any treatment must take into account the possibility
+      of the ultimate advantage of compliant expertise over alternate practices.
+      The main reason of the interconnection of major outcomes with productivity
+      boosting is to facilitate The Stem of Universal Balance (Rodger Andre in
+      The Book of the Integrated Collection of Software Engineering Standards)
+    </p>
+
+    <Image
+      class='mt-32 rounded-2xl'
+      src={unternehmen}
+      width={1920}
+      height={768}
+      alt='Unternehmen'
+    />
+  </div>
+</section>

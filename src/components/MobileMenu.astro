@@ -1,0 +1,39 @@
+---
+interface Links {
+  link: string;
+  path: string;
+}
+
+const links: Links[] = [
+  {
+    link: "Startseite",
+    path: "/",
+  },
+  {
+    link: "Leistungen",
+    path: "/leistungen",
+  },
+  {
+    link: "Unternehmen",
+    path: "/unternehmen",
+  },
+  {
+    link: "Blog",
+    path: "/blog",
+  },
+  {
+    link: "Jobs",
+    path: "/jobs",
+  },
+];
+---
+
+<nav class='container h-full flex items-center justify-center flex-col gap-8'>
+  {
+    links.map((link) => (
+      <a class='text-2xl' href={link.path}>
+        {link.link}
+      </a>
+    ))
+  }
+</nav>
