@@ -1,7 +1,14 @@
 ---
+import SubtitleLine from "../components/SubtitleLine.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title='Jobs'>
-  <div>jobs</div>
+  <div class='container w-full pt-48 px-4'>
+    <SubtitleLine subTitle='new Jobs' />
+
+    <div class='text-black bg-accent p-4 rounded-2xl'>
+      <p>There are currently no jobs available</p>
+    </div>
+  </div>
 </Layout>
