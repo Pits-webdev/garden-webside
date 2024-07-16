@@ -24,6 +24,9 @@ export default {
         accent: "var(--accent)",
         gray: "var(--gray)",
       },
+      aria: {
+        current: "current=page",
+      },
     },
   },
   plugins: [],

@@ -39,7 +39,17 @@ const links: Links[] = [
     <a href='/'>Logo</a>
 
     <nav class='hidden md:flex gap-x-8'>
-      {links.map((link) => <a href={link.path}>{link.link}</a>)}
+      {
+        links.map((link) => (
+          <a
+            class='aria-current:text-accent hover:text-accent'
+            data-navlink
+            href={link.path}
+          >
+            {link.link}
+          </a>
+        ))
+      }
     </nav>
 
     <a
@@ -69,6 +79,17 @@ const links: Links[] = [
   const menuIcon = document.querySelector("#menu-icon");
   const closeIcon = document.querySelector("#close-icon");
   const mobileNav = document.querySelector("#mobile-nav");
+
+  const navLinks = document.querySelectorAll(
+    "[data-navlink]"
+  ) as NodeListOf<HTMLAnchorElement>;
+
+  /* NavLink current page text-accent */
+  navLinks.forEach((link) => {
+    if (window.location.href === link.href) {
+      link.setAttribute("aria-current", "page");
+    }
+  });
 
   /* Hamburger Menu */
   let isOpen = false;
