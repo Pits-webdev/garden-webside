@@ -16,6 +16,18 @@ export async function getStaticPaths() {
       leistung:
         "Pflasterbau Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, totam.",
     },
+    {
+      slug: "hofbefestigung",
+      title: "Hofbefestigung",
+      leistung:
+        "Hofbefestigung Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, totam.",
+    },
+    {
+      slug: "taichbau",
+      title: "Taichbau",
+      leistung:
+        "Taichbau Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, totam.",
+    },
   ];
 
   return leistungen.map((leistung) => {
@@ -26,10 +38,12 @@ export async function getStaticPaths() {
   });
 }
 const { slug } = Astro.params;
+
+console.log(slug);
 const { leistung } = Astro.props;
 ---
 
-<Layout title='Jobs'>
+<Layout title={leistung.title}>
   <div class='container w-full pt-48 px-4'>
     <SubtitleLine subTitle=`${leistung.title}` />
 
