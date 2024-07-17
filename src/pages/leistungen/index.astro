@@ -1,0 +1,131 @@
+---
+import SubtitleLine from "../../components/SubtitleLine.astro";
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Image1 from "../../assets/img1.jpg";
+---
+
+<Layout title='Unsere Leistungen.'>
+  <section class='w-full h-full'>
+    <div class='container flex flex-col pt-48'>
+      <SubtitleLine subTitle='Unser Leistungen' />
+
+      <div class='flex gap-8 flex-wrap'>
+        <div class='flex flex-col gap-4 max-w-[280px]'>
+          <h4>Gartenbau</h4>
+          <Image
+            class='rounded-2xl'
+            src={Image1}
+            alt='house with garden'
+            width={280}
+            height={280}
+          />
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci
+            debitis similique, aliquid minus maiores voluptatem enim dolorem
+            perspiciatis ipsam impedit?
+          </p>
+          <a
+            class='w-fit rounded-lg text-black bg-accent px-4 py-1'
+            href=`leistungen/gartenbau`>Gartenbau</a
+          >
+        </div>
+        <div class='flex flex-col gap-4 max-w-[280px]'>
+          <h4>Pflaserbau</h4>
+          <Image
+            class='rounded-2xl'
+            src={Image1}
+            alt='house with garden'
+            width={280}
+            height={280}
+          />
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci
+            debitis similique, aliquid minus maiores voluptatem enim dolorem
+            perspiciatis ipsam impedit?
+          </p>
+          <a
+            class='w-fit rounded-lg text-black bg-accent px-4 py-1'
+            href=`leistungen/pflasterbau`>Pflasterbau</a
+          >
+        </div>
+        <div class='flex flex-col gap-4 max-w-[280px]'>
+          <h4>Pflaserbau</h4>
+          <Image
+            class='rounded-2xl'
+            src={Image1}
+            alt='house with garden'
+            width={280}
+            height={280}
+          />
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci
+            debitis similique, aliquid minus maiores voluptatem enim dolorem
+            perspiciatis ipsam impedit?
+          </p>
+          <a
+            class='w-fit rounded-lg text-black bg-accent px-4 py-1'
+            href=`leistungen/3`>3</a
+          >
+        </div>
+        <div class='flex flex-col gap-4 max-w-[280px]'>
+          <h4>Pflaserbau</h4>
+          <Image
+            class='rounded-2xl'
+            src={Image1}
+            alt='house with garden'
+            width={280}
+            height={280}
+          />
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci
+            debitis similique, aliquid minus maiores voluptatem enim dolorem
+            perspiciatis ipsam impedit?
+          </p>
+          <a
+            class='w-fit rounded-lg text-black bg-accent px-4 py-1'
+            href=`leistungen/4`>4</a
+          >
+        </div>
+        <div class='flex flex-col gap-4 max-w-[280px]'>
+          <h4>Pflaserbau</h4>
+          <Image
+            class='rounded-2xl'
+            src={Image1}
+            alt='house with garden'
+            width={280}
+            height={280}
+          />
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci
+            debitis similique, aliquid minus maiores voluptatem enim dolorem
+            perspiciatis ipsam impedit?
+          </p>
+          <a
+            class='w-fit rounded-lg text-black bg-accent px-4 py-1'
+            href=`leistungen/5`>5</a
+          >
+        </div>
+        <div class='flex flex-col gap-4 max-w-[280px]'>
+          <h4>Pflaserbau</h4>
+          <Image
+            class='rounded-2xl'
+            src={Image1}
+            alt='house with garden'
+            width={280}
+            height={280}
+          />
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci
+            debitis similique, aliquid minus maiores voluptatem enim dolorem
+            perspiciatis ipsam impedit?
+          </p>
+          <a
+            class='w-fit rounded-lg text-black bg-accent px-4 py-1'
+            href=`leistungen/6`>6</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

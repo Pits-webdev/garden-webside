@@ -1,0 +1,38 @@
+---
+import SubtitleLine from "../../components/SubtitleLine.astro";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const leistungen = [
+    {
+      slug: "gartenbau",
+      title: "Gartenbau",
+      leistung:
+        "Gartenbau Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, totam.",
+    },
+    {
+      slug: "pflasterbau",
+      title: "Pflasterbau",
+      leistung:
+        "Pflasterbau Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, totam.",
+    },
+  ];
+
+  return leistungen.map((leistung) => {
+    return {
+      params: { slug: leistung.slug },
+      props: { leistung },
+    };
+  });
+}
+const { slug } = Astro.params;
+const { leistung } = Astro.props;
+---
+
+<Layout title='Jobs'>
+  <div class='container w-full pt-48 px-4'>
+    <SubtitleLine subTitle=`${leistung.title}` />
+
+    <p>{leistung.leistung}</p>
+  </div>
+</Layout>
